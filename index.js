@@ -1,4 +1,4 @@
-let first_count = document.querySelector('.first');
+/*let first_count = document.querySelector('.first');
 console.log(first_count);
 let second_count = document.querySelector('.second');
 console.log(first_count);
@@ -36,5 +36,19 @@ function division() {
         console.log(result)
         return result;
     });
-}
+}*/
+
+let count_display = [];
+
+let monitor = document.querySelector('.input_container');
+let symbols = document.querySelectorAll('.symbol');
+
+symbols.forEach(symbol => {
+    symbol.addEventListener('click', function () {
+        count_display.push(symbol.dataset.value);
+        monitor.innerHTML = count_display.join(' ');
+        console.log(symbol);
+        console.log(count_display);
+    })
+})
 
