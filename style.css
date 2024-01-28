@@ -51,7 +51,11 @@ button {
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-start;
+  text-align: right;
   color: azure;
+  font-size: 50px;
+  font-family: system-ui;
+  font-weight: 600;
 }
 
 .btn_section {

@@ -46,7 +46,7 @@ let symbols = document.querySelectorAll('.symbol');
 symbols.forEach(symbol => {
     symbol.addEventListener('click', function () {
         count_display.push(symbol.dataset.value);
-        monitor.innerHTML = count_display.join(' ');
+        monitor.innerHTML = count_display.join('');
         console.log(symbol);
         console.log(count_display);
     })
