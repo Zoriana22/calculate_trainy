@@ -11,8 +11,8 @@ let numbers = document.querySelectorAll('.number');
 const del_btn = document.getElementById('del');
 const clear_btn = document.getElementById('clear');
 const minus_btn = document.getElementById('minus');
-const result_sing = document.getElementById('result_sing');
-console.log(result_sing);
+const result_sign = document.getElementById('result_sign');
+console.log(result_sign);
 numbers.forEach(number => {
     number.addEventListener('click', function () {
 
@@ -33,10 +33,10 @@ minus_btn.addEventListener('click', function () {
     console.log(a);
 })
 
-result_sing.addEventListener('click', function () {
+result_sign.addEventListener('click', function () {
     b = count_display.join('');
     /*number_input.innerHTML = a +' ' + "-" + ' ' + b + ' ' + '=';*/
-    number_input.innerHTML = ` ${a} + ${b}  = `;
+    number_input.innerHTML = ` ${a} - ${b}  = `;
     console.log(b);
     finish_result = a - b;
     console.log(finish_result);
