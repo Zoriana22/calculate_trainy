@@ -24,7 +24,7 @@ numbers.forEach(number => {
 
 minus_btn.addEventListener('click', function () {
     a = count_display.join('');
-    number_input.innerHTML = result.innerHTML + "-";
+    number_input.innerHTML = `${result.innerHTML} - ` ;
     result.innerHTML = '';
     count_display = [];
 
