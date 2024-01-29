@@ -14,30 +14,32 @@ const minus_btn = document.getElementById('minus');
 const result_sing = document.getElementById('result_sing');
 console.log(result_sing);
 numbers.forEach(number => {
-        number.addEventListener('click', function () {
-        
-            count_display.push(number.dataset.value);
-            result.innerHTML = count_display.join('');
-            console.log(count_display);
-        })
+    number.addEventListener('click', function () {
+
+        count_display.push(number.dataset.value);
+        result.innerHTML = count_display.join('');
+        console.log(count_display);
+    })
 })
 
-minus_btn.addEventListener('click', function() {
+minus_btn.addEventListener('click', function () {
     a = count_display.join('');
     number_input.innerHTML = result.innerHTML + "-";
     result.innerHTML = '';
     count_display = [];
-    
+
     console.log(number_input);
     console.log(result);
     console.log(a);
 })
 
-result_sing.addEventListener('click', function() {
+result_sing.addEventListener('click', function () {
     b = count_display.join('');
+    /*number_input.innerHTML = a +' ' + "-" + ' ' + b + ' ' + '=';*/
+    number_input.innerHTML = ` ${a} + ${b}  = `;
     console.log(b);
     finish_result = a - b;
-    console.log(finish_result); 
+    console.log(finish_result);
     result_display.push(finish_result);
     result.innerHTML = finish_result;
 })
