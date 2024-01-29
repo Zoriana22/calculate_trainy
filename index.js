@@ -1,54 +1,57 @@
-/*let first_count = document.querySelector('.first');
-console.log(first_count);
-let second_count = document.querySelector('.second');
-console.log(first_count);
-let result = document.querySelector('.result');
-
-
-const plus_btn = document.querySelector('.plus');
-const minus_btn = document.querySelector('.minus');
-const multi_btn = document.querySelector('.multiplication');
-const division_btn = document.querySelector('.division');
-
-
-plus_btn.addEventListener('click', function () {
-    result.innerHTML = Number(first_count.value) + Number(second_count.value);
-    console.log(result);
-});
-
-function minus() {
-    minus_btn.addEventListener('click', function () {
-        result.innerHTML = first_count.value - second_count.value;
-        console.log(result)
-        return result;
-    });
-}
-function multi() {
-    multi_btn.addEventListener('click', function () {
-        result.innerHTML = first_count.value * second_count.value;
-        console.log(result)
-        return result;
-    });
-}
-function division() {
-    division_btn.addEventListener('click', function () {
-        result.innerHTML = first_count.value / second_count.value;
-        console.log(result)
-        return result;
-    });
-}*/
 
 let count_display = [];
+let result_display = [];
+let result = document.querySelector('.result');
+let number_input = document.querySelector('.number_input');
+let a = '';
+let b = '';
+let finish_result = 0;
+let numbers = document.querySelectorAll('.number');
 
-let monitor = document.querySelector('.input_container');
-let symbols = document.querySelectorAll('.symbol');
-
-symbols.forEach(symbol => {
-    symbol.addEventListener('click', function () {
-        count_display.push(symbol.dataset.value);
-        monitor.innerHTML = count_display.join('');
-        console.log(symbol);
-        console.log(count_display);
-    })
+const del_btn = document.getElementById('del');
+const clear_btn = document.getElementById('clear');
+const minus_btn = document.getElementById('minus');
+const result_sing = document.getElementById('result_sing');
+console.log(result_sing);
+numbers.forEach(number => {
+        number.addEventListener('click', function () {
+        
+            count_display.push(number.dataset.value);
+            result.innerHTML = count_display.join('');
+            console.log(count_display);
+        })
 })
+
+minus_btn.addEventListener('click', function() {
+    a = count_display.join('');
+    number_input.innerHTML = result.innerHTML + "-";
+    result.innerHTML = '';
+    count_display = [];
+    
+    console.log(number_input);
+    console.log(result);
+    console.log(a);
+})
+
+result_sing.addEventListener('click', function() {
+    b = count_display.join('');
+    console.log(b);
+    finish_result = a - b;
+    console.log(finish_result); 
+    result_display.push(finish_result);
+    result.innerHTML = finish_result;
+})
+
+del_btn.addEventListener('click', function () {
+    count_display.pop();
+    console.log(count_display);
+    result.innerHTML = count_display.join('');
+})
+
+clear_btn.addEventListener('click', function () {
+    result.innerHTML = '';
+    count_display = [];
+})
+
+
 
